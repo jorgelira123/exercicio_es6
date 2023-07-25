@@ -6,13 +6,15 @@ const alunos = [
   {nome: "Carlos", nota: 8.0 }
 ];
 
+function notaDoAlunoMaiorSeis(alunos) {
+    return alunos.nota >= 6
+}
+
 function notaDoAluno() {
-    for (let i = 0; i < alunos.length; i++) {
-        if (alunos[i].nota >= 6) {
-            console.log(alunos[i].nome)
-        }
-        
-    }
+    const aprovados = alunos.filter(notaDoAlunoMaiorSeis);
+    aprovados.forEach(aluno => {
+        console.log(aluno.nome)
+    });
 }
 
 notaDoAluno();
